@@ -1,0 +1,19 @@
+<header>
+    <ul>
+        <% if (locals.user) { %>
+            <small>Codeial / <%= title %></small> <br>
+            Welcome <%= user.name %>
+            <br><br>
+            <button><a href="/user/sign-out">Sign-Out</a></button> &nbsp; <button><a href="/">Home</a></button>
+            
+        <% } else { %>
+            <h1></h1>
+
+        <% } %>
+
+
+    </ul>
+
+
+
+</header>

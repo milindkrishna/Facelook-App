@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    
+    <title><%= title %></title>
+    <!-- Notyjs CDN Link -->
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.css" integrity="sha512-NXUhxhkDgZYOMjaIgd89zF2w51Mub53Ru3zCNp5LTlEzMbNNAjTjDbpURYGS5Mop2cU4b7re1nOIucsVlrx9fA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/noty/3.1.4/noty.js" integrity="sha512-mgZL3SZ/vIooDg2mU2amX6NysMlthFl/jDbscSRgF/k3zmICLe6muAs7YbITZ+61FeUoo1plofYAocoR5Sa1rQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     
+     <!-- Jquery CDN Link
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.3/jquery.min.js" integrity="sha512-STof4xm1wgkfm7heWqFJVn58Hm3EtS31XFaagaa8VMReCXAkQnJZ+jEy8PCC/iT18dFy95WcExNHFTqLyp72eQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+     -->
+    <!-- adding link for reflecting static file which is css -->
+    <link rel="stylesheet" href="/css/layout.css">
+    <link rel="stylesheet" href="/css/header.css">
+    <link rel="stylesheet" href="/css/footer.css">
+
+    
+    
+    <%- style%>
+</head>
+<body>
+    <!-- Adding partials in ejs -->
+    <%- include('_header');%>
+
+    <main id="layout-main">
+        <%- body%>
+    </main>
+    
+
+    <!-- Adding partials in ejs -->
+    <%- include('_footer');%>
+    <%- script%>
+    <script>
+        <% if(flash.success && flash.success.length > 0) { %>
+        
+            new Noty({
+            theme : 'relax',
+            text: "<%= flash.success %>",
+            type: 'success',
+            layout: 'topRight',
+            timeout: 1500
+            }).show();
+        
+        <% } %>
+
+        <% if (flash.error && flash.error.length > 0) { %>
+        
+        new Noty({
+        theme : 'mint',
+        text: "<%= flash.error %>",
+        type: 'error',
+        layout: 'topRight',
+        timeout: 1500
+        }).show();
+    
+    <% } %>
+    </script>
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/user_profile.css">
+</head>
+<body>
+    <h1>Sign Up Form</h1>
+    <form action="/user/create" method="post">
+        <input style="padding: 10px; width: 250px; border-radius: 10px;" type="text" name="name" placeholder="Your Name" required><br><br>
+        <input style="padding: 10px; width: 250px; border-radius: 10px;" type="email" name="email" placeholder="Your Email" required><br><br>
+        <input style="padding: 10px; width: 250px; border-radius: 10px;" type="password" name="password" placeholder="Password" required><br><br>
+        <input style="padding: 10px; width: 250px; border-radius: 10px;" type="password" name="confirm_password" placeholder="Confirm Password" required><br><br>
+        <input style="padding: 10px; width: 150px; border-radius: 10px;" type="submit" value="Sign Up">
+    </form>
+
+    <button style="padding: 10px; width: 150px; border-radius: 10px;"><a style="text-decoration: none; color: red;" href="/user/sign-in">Sign-In</a></button>
+    <h4><b>OR</b></h4>
+    
+    <div style="display: flex; justify-content: center;">
+        <img src="/images/google.svg" alt="google-image" width="50px" height="50px">&nbsp;&nbsp;
+    <button style="padding: 10px;background-color: azure; border-radius: 10px;"><a style="text-decoration: none; color: red;" href="/user/auth/google"> Continue with Google</a></button>
+      
+</body>
+</html>

@@ -1,0 +1,25 @@
+Option 2: Send email with the Gmail SMTP server
+If you connect using SSL or TLS, you can send email to anyone inside or outside of your organization using smtp.gmail.com as your SMTP server. This option requires you to authenticate with your Gmail or Google Workspace account and passwords.
+
+Considerations
+Keep the following in mind when using the Gmail SMTP server:
+
+Your complete Google Workspace email address is required for authentication.
+The sending limit is 2,000 messages per day. Learn more about email sending limits.
+Spam filters might reject or filter suspicious messages.
+The fully qualified domain name of the SMTP service is smtp.gmail.com.
+Configuration options include:
+Port 25, 465, or 587
+Secure Socket Layer (SSL) and Transport Layer Security (TLS) protocols
+Dynamic IP addresses
+Older scanners or printers might not support OAuth, which lets apps and devices share your Google account data without requiring a username or password. For these devices, take these steps before you set up the device:
+
+Turn on less secure apps in the Admin console.
+Tell your users to turn on less secure apps in their account.
+Tell your users to create and use app-specific passwords to use with the device or app that is sending email.
+Setup steps
+On the device or in the app, enter smtp.gmail.com as the server address.
+In the Port field, enter one of the following numbers:
+For SSL, enter 465.
+For TLS, enter 587.
+For authentication, enter your complete Google Workspace email address (for example: your.name@solarmora.com) and password. Make sure to sign in to the account before you use it with the device or app.

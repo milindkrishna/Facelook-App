@@ -1,0 +1,15 @@
+body {
+  padding-left: 50px;
+  padding-right: 40px; }
+
+#home-container {
+  display: flex; }
+  #home-container #feed-post {
+    width: 80%;
+    padding: 10px;
+    border: 5px solid green; }
+  #home-container #friend {
+    width: 20%;
+    border: 5px solid white; }
+  #home-container #no-access {
+    width: 100%; }

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= title %></title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+<body>
+
+
+    <div id="home-container">
+        <% if (locals.user) { %>
+            <section id="feed-post">
+                <h2>Welcome to FaceLook Application</h2>
+
+                <form id="new-post-form" action="/posts/create" method="POST">
+                    <textarea style="padding: 20px;" name="content" id="" cols="80" rows="5" placeholder="Please Create Posts Here...." required></textarea>
+                    <input type="submit" value="Post">
+                </form>
+                
+                <br>
+                <br>
+                <br>
+                <%- include('_post') -%>
+            </section>
+            
+            <section id="friend">
+                <h2>List of Friends</h2>
+                <% for(u of all_users) { %>
+                    <p>
+                        <% if(locals.user.id == u.id) {%>
+                        <a style="text-decoration: none; color: green; font-weight: bold;" href="/user/profile/<%= u.id %>"><%= u.name %></a>
+                        <% } else { %>
+                        <a style="text-decoration: none; color: gray; font-weight: bold;" href="/user/profile/<%= u.id %>"><%= u.name %></a>
+                        <%}%>
+                    </p>
+                <% }%>
+
+                
+            </section>
+
+           
+
+            <% } else {%>
+                <div id="no-access">
+                    <h1>Welcome to FaceLook Application</h1>
+                    
+                    <button style="padding: 10px; width: 150px; border-radius: 10px;"><a style="text-decoration: none; color: red;" href="/user/sign-in">Sign-In</a></button>
+                     <h4><b>OR</b></h4>
+                    <button style="padding: 10px; width: 150px; border-radius: 10px;"><a style="text-decoration: none; color: red;" href="/user/sign-up">Sign-Up</a></button>
+   
+                </div>
+            <% } %>
+
+
+            
+            
+    </div>
+
+    
+   
+    
+</body>
+</html>

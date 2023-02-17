@@ -1,0 +1,24 @@
+<div>
+<% for (post of posts) {%>
+    <div style="border: 5px solid red; border-spacing: 20px; padding: 20px;">
+    <li style="list-style-type: none;"><b><%= post.user.name %></b> : <%= post.content %></li>
+  <li style="list-style-type: none;"><b>Post Time</b> : <%= post.user.createdAt %></li>
+  <br>
+
+  <% if(locals.user && locals.user.id == post.user.id) { %>
+    <button><b><small><a style="text-decoration: none; color: red;" href="/posts/destroy/<%= post.id %>">Delete Post</a></small></b></button>
+   <%}%>
+    </div>
+    
+   <br>
+   <br>
+  <form action="/comments/create" method="POST">
+    <textarea style="padding: 20px;" name="content" id="" cols="60" rows="4" placeholder="Please comment down here.." required></textarea>
+    <input type="hidden" name="post" value="<%= post._id %>">
+    <input type="submit" value="Add Comment" style="color: brown; font-weight: bold;">
+  </form>
+   <br>
+
+   <%- include('_comment') -%>
+<% } %>
+</div>

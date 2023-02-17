@@ -1,0 +1,10 @@
+body {
+  margin: 0;
+  background-image: url("../images/blob-haikei.svg");
+  text-align: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  color: azure; }
+
+#layout-main {
+  height: 100%; }
